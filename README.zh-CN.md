@@ -37,12 +37,12 @@ FreeFEM 官方只发布 **Ubuntu**（22.04 / 24.04 / 26.04）、**Windows** 和 
 
 ```bash
 # 方法一：在线安装（自动补装依赖）
-sudo dpkg -i freefem_4.17-1_amd64.deb
+sudo dpkg -i freefem_4.17-2_amd64.deb
 sudo apt-get -f install
 
 # 方法二：完全离线
 # 需同时准备好两个依赖包：libhdf5-310、libopenblas0-pthread
-sudo dpkg -i libhdf5-310_*.deb libopenblas0-pthread_*.deb freefem_4.17-1_amd64.deb
+sudo dpkg -i libhdf5-310_*.deb libopenblas0-pthread_*.deb freefem_4.17-2_amd64.deb
 ```
 
 **运行**
@@ -57,12 +57,16 @@ FreeFem++-nw 你的脚本.edp
 
 安装后即位于 `/usr/local/bin`，与官方 Ubuntu 版的命令行用法完全一致。FreeFEM 自带 idp 宏（如 `macro_ddm.idp`、`ffddm.idp`）与全部插件均随包安装。
 
+
+**图形界面绘图（GUI）**
+
+FreeFEM 的图形输出（plot 窗口，基于 ffglut）需要 `freeglut3-dev`，已作为依赖写入本包——在线安装会自动带上；完全离线安装时请额外准备 `freeglut3-dev` 安装包。
 **包内包含**：`FreeFem++` / `FreeFem++-mpi` / `FreeFem++-nw`、`ff-mpirun`、`bamg`、`cvmsh2`、`ff-c++` 等可执行文件；`/usr/local/lib/ff++/4.17`（插件 .so、idp 宏、头文件）；`/usr/local/ff-petsc`（PETSc 3.25 + SLEPc + MUMPS + MPICH）。
 
 **校验**
 
 ```
-SHA-256 (freefem_4.17-1_amd64.deb) = 5076ec9b000e5671ff648ad5b71ce9ae0c30b98d0e5a72bb993f9bbf4b6c0371
+SHA-256 (freefem_4.17-2_amd64.deb) = 2c81580e94c79187f6d1bed32c92019f08f677bdfe32b079e822d22cd394c1b9
 ```
 
 **卸载**
