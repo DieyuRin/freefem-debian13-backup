@@ -37,12 +37,12 @@ This package is that **native FreeFEM 4.17 extracted from the official image** �
 
 ```bash
 # Online (resolves dependencies automatically)
-sudo dpkg -i freefem_4.17-1_amd64.deb
+sudo dpkg -i freefem_4.17-2_amd64.deb
 sudo apt-get -f install
 
 # Fully offline — also need the two dependency packages:
 #   libhdf5-310, libopenblas0-pthread
-sudo dpkg -i libhdf5-310_*.deb libopenblas0-pthread_*.deb freefem_4.17-1_amd64.deb
+sudo dpkg -i libhdf5-310_*.deb libopenblas0-pthread_*.deb freefem_4.17-2_amd64.deb
 ```
 
 **Run**
@@ -57,12 +57,16 @@ FreeFem++-nw your-script.edp
 
 Everything installs to `/usr/local/bin`, with command-line usage identical to the official Ubuntu build. FreeFEM's idp macros (`macro_ddm.idp`, `ffddm.idp`, …) and all plugins are included.
 
+
+**GUI (interactive plotting)**
+
+FreeFEM's graphical output (plot windows via ffglut) requires `freeglut3-dev`, which is declared as a dependency of this package — online installs pull it in automatically; for fully offline installs, also carry the `freeglut3-dev` package.
 **Package contents**: `FreeFem++` / `FreeFem++-mpi` / `FreeFem++-nw`, `ff-mpirun`, `bamg`, `cvmsh2`, `ff-c++`, etc.; `/usr/local/lib/ff++/4.17` (208 plugin `.so`, 28 idp macros, 327 headers); `/usr/local/ff-petsc` (PETSc 3.25 + SLEPc + MUMPS + MPICH).
 
 **Checksum**
 
 ```
-SHA-256 (freefem_4.17-1_amd64.deb) = 5076ec9b000e5671ff648ad5b71ce9ae0c30b98d0e5a72bb993f9bbf4b6c0371
+SHA-256 (freefem_4.17-2_amd64.deb) = 2c81580e94c79187f6d1bed32c92019f08f677bdfe32b079e822d22cd394c1b9
 ```
 
 **Uninstall**
